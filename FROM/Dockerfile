@@ -1,3 +1,10 @@
 FROM almalinux:8
 
-RUN echo "Hello" > h1.txt
+RUN dnf install -nginx -y
+RUN rm -f /usr/share/nginx/html/index.html
+
+COPY qi/ /usr/share/nginx/html/
+
+EXPOSE 80
+
+
