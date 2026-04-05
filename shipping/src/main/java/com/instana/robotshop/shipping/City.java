@@ -80,7 +80,6 @@ public class City {
 
     @Override
     public String toString() {
-        return String.format("Country: %s City: %s Region: %s Coords: %f %f", this.code, this.city, this.region,
-                this.latitude, this.longitude);
+        return String.format("Country: %s City: %s Region: %s Coords: %f %f", this.code, this.city, this.region, this.latitude, this.longitude);
     }
 }

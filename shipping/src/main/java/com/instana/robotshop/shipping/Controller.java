@@ -41,7 +41,7 @@ public class Controller {
     @GetMapping(path = "/memory")
     public int memory() {
         byte[] bytes = new byte[1024 * 1024 * 25];
-        Arrays.fill(bytes, (byte) 8);
+        Arrays.fill(bytes,(byte)8);
         bytesGlobal.add(bytes);
 
         return bytesGlobal.size();

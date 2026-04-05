@@ -48,7 +48,7 @@ public class ShippingServiceApplication implements WebMvcConfigurer {
         @Override
         public Object postProcessBeforeInitialization(Object bean, String name) throws BeansException {
             if (bean instanceof DataSource) {
-                bean = new RetryableDataSource((DataSource) bean);
+                bean = new RetryableDataSource((DataSource)bean);
             }
             return bean;
         }
@@ -66,8 +66,7 @@ public class ShippingServiceApplication implements WebMvcConfigurer {
 
     private static class InstanaDatacenterTagInterceptor extends HandlerInterceptorAdapter {
         @Override
-        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
-                throws Exception {
+        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
             SpanSupport.annotate("datacenter", DATA_CENTERS[new Random().nextInt(DATA_CENTERS.length)]);
 

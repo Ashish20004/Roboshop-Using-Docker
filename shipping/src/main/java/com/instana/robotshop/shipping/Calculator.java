@@ -1,5 +1,6 @@
 package com.instana.robotshop.shipping;
 
+
 public class Calculator {
     private double latitude = 0;
     private double longitude = 0;
@@ -31,11 +32,12 @@ public class Calculator {
         double diffLongR = Math.toRadians(targetLongitude - this.longitude);
 
         double a = Math.sin(diffLatR / 2.0) * Math.sin(diffLatR / 2.0)
-                + Math.cos(latitudeR) * Math.cos(targetLatitudeR)
-                        * Math.sin(diffLongR / 2.0) * Math.sin(diffLongR);
+            + Math.cos(latitudeR) * Math.cos(targetLatitudeR)
+            * Math.sin(diffLongR / 2.0) * Math.sin(diffLongR);
 
         double c = 2.0 * Math.atan2(Math.sqrt(a), Math.sqrt(1.0 - a));
 
-        return (long) Math.rint(earthRadius * c / 1000.0);
+        return (long)Math.rint(earthRadius * c / 1000.0);
     }
 }
+

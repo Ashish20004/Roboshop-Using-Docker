@@ -18,7 +18,7 @@ import org.apache.http.params.HttpParams;
 
 public class CartHelper {
     private static final Logger logger = LoggerFactory.getLogger(CartHelper.class);
-
+    
     private String baseUrl;
 
     public CartHelper(String baseUrl) {
@@ -54,16 +54,16 @@ public class CartHelper {
             }
             try {
                 res.close();
-            } catch (IOException e) {
+            } catch(IOException e) {
                 logger.warn("httpresponse", e);
             }
-        } catch (Exception e) {
+        } catch(Exception e) {
             logger.warn("http client exception", e);
         } finally {
             if (httpClient != null) {
                 try {
                     httpClient.close();
-                } catch (IOException e) {
+                } catch(IOException e) {
                     logger.warn("httpclient", e);
                 }
             }
