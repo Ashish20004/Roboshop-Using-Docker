@@ -83,10 +83,7 @@ a.product:hover {
     top: -50px;
 }
 
-.row,
-.column,
-.nav,
-.main {
+.row, .column, .nav, .main {
     margin: 0px;
     box-sizing: border-box;
     width: 800px;
@@ -195,3 +192,4 @@ div.splash {
     padding: 5px;
     margin: 0px;
 }
+
