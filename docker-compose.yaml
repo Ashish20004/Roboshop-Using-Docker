@@ -71,7 +71,7 @@ services:
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
-  rabbitmq:
+  rabbitmq:  
     image: rabbitmq:3
     environment: 
       RABBITMQ_DEFAULT_USER: roboshop
