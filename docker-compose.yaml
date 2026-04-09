@@ -1,34 +1,34 @@
 services:
   catalogue:
     build: ./catalogue
-    image: devzonefun/catalogue:1.0.0
+    image: devzonefun/catalogue:2.0.0
     container_name: catalogue
     depends_on:
     - mongodb
   user:
     build: ./user
-    image: devzonefun/user:1.0.0
+    image: devzonefun/user:2.0.0
     container_name: user
     depends_on:
     - redis
     - mongodb
   cart:
     build: ./cart
-    image: devzonefun/cart:1.0.0
+    image: devzonefun/cart:2.0.0
     container_name: cart
     depends_on:
     - redis
     - catalogue
   shipping:
     build: ./shipping
-    image: devzonefun/shipping:1.0.0
+    image: devzonefun/shipping:2.0.0
     container_name: shipping
     depends_on:
     - mysql
     - cart
   payment:
     build: ./payment
-    image: devzonefun/payment:1.0.0
+    image: devzonefun/payment:2.0.0
     container_name: payment
     environment:
       CART_HOST: "cart"
@@ -44,7 +44,7 @@ services:
     - user
   frontend:
     build: ./frontend
-    image: devzonefun/frontend:1.0.0
+    image: devzonefun/frontend:2.0.0
     container_name: frontend
     ports:
     - "80:80"
@@ -56,7 +56,7 @@ services:
     - payment
   mongodb:
     build: ./mongodb # it moves to mongodb directory
-    image: devzonefun/mongodb:1.0.0 # docker build -t devzonefun/mongodb:1.0.0
+    image: devzonefun/mongodb:2.0.0 # docker build -t devzonefun/mongodb:2.0.0
     container_name: mongodb
     volumes:
     - /:/data/db
@@ -67,7 +67,7 @@ services:
     - redis:/data
   mysql:
     build: ./mysql
-    image: devzonefun/mysql:1.0.0
+    image: devzonefun/mysql:2.0.0
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
