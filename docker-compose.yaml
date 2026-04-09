@@ -59,7 +59,7 @@ services:
     image: devzonefun/mongodb:2.0.0 # docker build -t devzonefun/mongodb:2.0.0
     container_name: mongodb
     volumes:
-    - /:/data/db
+    - mongodb-data:/data/db
   redis:
     image: redis:7.0
     container_name: redis
