@@ -61,8 +61,6 @@ services:
     volumes:
     - mongodb-data:/data/db
   
-volumes:
-  mongodb-data:
   redis:
     image: redis:7.0
     container_name: redis
@@ -92,3 +90,4 @@ volumes:
   redis:
   mysql:
   rabbitmq:
+  mongodb-data:
