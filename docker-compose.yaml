@@ -59,7 +59,7 @@ services:
     image: devzonefun/mongodb:2.0.0 # docker build -t devzonefun/mongodb:2.0.0
     container_name: mongodb
     volumes:
-    - mongodb-data:/data/db
+    - /:/data/db
   redis:
     image: redis:7.0
     container_name: redis
@@ -71,7 +71,7 @@ services:
     container_name: mysql
     volumes:
     - mysql:/var/lib/mysql
-  rabbitmq:  
+  rabbitmq: 
     image: rabbitmq:3
     environment: 
       RABBITMQ_DEFAULT_USER: roboshop
