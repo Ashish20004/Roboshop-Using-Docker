@@ -15,7 +15,7 @@
 # USER roboshop
 # CMD ["uwsgi", "--ini", "payment.ini"]
 
-debian/ubuntu
+# debian/ubuntu
 FROM python:3.9 
 EXPOSE 8080
 WORKDIR /app
